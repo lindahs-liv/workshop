@@ -13,7 +13,7 @@ namespace BusinessLayer
 
         public List<Products> GetProducts()
         {
-            List <Products>products = new List<Products>();
+            List<Products> products = new List<Products>();
             foreach (DataLayer.Products product in dataManager.GetProducts())
                 products.Add(new Products(product));
 
@@ -28,6 +28,35 @@ namespace BusinessLayer
 
             return products;
         }
+
+        public object GetUnitPriceGreaterThan100()
+        {
+            List<Products> products = new List<Products>();
+            foreach (DataLayer.Products product in dataManager.GetUnitsGreaterThan100())
+                products.Add(new Products(product));
+
+            return products;
+        }
+
+
+        public object SortListDescending()
+        {
+            List<Products> products = new List<Products>();
+            foreach (DataLayer.Products product in dataManager.SortListDescending())
+                products.Add(new Products(product));
+
+            return products;
+        }
+
+        public object SortListAscending()
+        {
+            List<Products> products = new List<Products>();
+            foreach (DataLayer.Products product in dataManager.SortListAscending())
+                products.Add(new Products(product));
+
+            return products;
+        }
     }
 }
+
 

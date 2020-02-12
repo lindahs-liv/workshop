@@ -69,7 +69,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "UnitPriceGreaterThan 100";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btnUnitPriceGreaterThan100);
             // 
             // button3
             // 
@@ -103,7 +103,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Ascending";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.btnSortListAscending_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -115,6 +115,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Descending";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.btnSortListDescending_CheckedChanged);
             // 
             // btnStartingWithAll
             // 
@@ -124,7 +125,7 @@
             this.btnStartingWithAll.TabIndex = 11;
             this.btnStartingWithAll.Text = "Starting With A";
             this.btnStartingWithAll.UseVisualStyleBackColor = true;
-            this.btnStartingWithAll.Click += new System.EventHandler(this.btnStartingWithAll_Click);
+            this.btnStartingWithAll.Click += new System.EventHandler(this.btnStartingWithA_Click);
             // 
             // Form1
             // 

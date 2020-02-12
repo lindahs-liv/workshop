@@ -27,5 +27,44 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public List<Products> GetUnitsGreaterThan100()
+        {
+            using (var db = new Northwind())
+            {
+                var query = from x in db.Products
+                            where x.UnitPrice > 100 
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
+        
+        public List<Products> SortListDescending()
+        {
+            using (var db = new Northwind())
+            {
+                var query = from x in db.Products
+                            where x.UnitPrice <= 50
+                            where x.UnitPrice < 100
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
+        public IEnumerable<Products> SortListAscending()
+        {
+            using (var db = new Northwind())
+            {
+                var query = from x in db.Products
+                            where x.UnitPrice <= 50
+                            where x.UnitPrice < 100
+                            select x;
+
+                return query.ToList();
+            }
+        }
     }
 }

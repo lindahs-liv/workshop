@@ -30,9 +30,11 @@ namespace PresentationLayer_WinForms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        // Listar alla objekt vars enhetspris är högre än 100
+        private void btnUnitPriceGreaterThan100(object sender, EventArgs e)
         {
-
+            BindingSource.DataSource = BusinessManager.GetUnitPriceGreaterThan100();
+            dataGridView1.DataSource = BindingSource.DataSource;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -40,9 +42,12 @@ namespace PresentationLayer_WinForms
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        // Sorterar listan stigande
+        private void btnSortListAscending_CheckedChanged(object sender, EventArgs e)
         {
-
+            // BindingSource.DataSource = BusinessManager.SortListAscending();
+            BindingSource.Sort = "ProductName ASC";
+            dataGridView1.DataSource = BindingSource;
         }
 
         private void btnGetAll(object sender, EventArgs e)
@@ -51,6 +56,7 @@ namespace PresentationLayer_WinForms
             dataGridView1.DataSource = BindingSource.DataSource;
         }
 
+        // Döljer kolumner som inte är relevanta
         private void HideColums()
         {
             dataGridView1.Columns["ProductId"].Visible = false;
@@ -62,10 +68,18 @@ namespace PresentationLayer_WinForms
             dataGridView1.Columns["Order_Details"].Visible = false;
         }
 
-        private void btnStartingWithAll_Click(object sender, EventArgs e)
+        // Visar alla objekt som börjar på A/a
+        private void btnStartingWithA_Click(object sender, EventArgs e)
         {
             BindingSource.DataSource = BusinessManager.GetProductsStartingWithA();
             dataGridView1.DataSource = BindingSource.DataSource;
+        }
+
+        // Sorterar listan fallande. Logiken ska ligga här då den tillhör här...
+        private void btnSortListDescending_CheckedChanged(object sender, EventArgs e)
+        {
+            BindingSource.Sort = "ProductName DESC";
+            dataGridView1.DataSource = BindingSource;
         }
     }
 }
